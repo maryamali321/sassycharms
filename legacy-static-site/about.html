@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About – SaasyCharms</title>
+  <link rel="stylesheet" href="assets/css/main.css"/>
+  <link rel="stylesheet" href="assets/css/pages/about.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <div class="announcement-bar">
+    <p>✨ Free shipping on orders above Rs. 2000 &nbsp;|&nbsp; Use code <strong>SAASY10</strong> for 10% off ✨</p>
+  </div>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-logo">
+      <a href="index.html"><span class="logo-icon">✦</span><span class="logo-text">SaasyCharms</span><span class="logo-icon">✦</span></a>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="track.html">Track Order</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-icons">
+      <a href="#"><i class="fas fa-search"></i></a>
+      <a href="#"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+      <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <h1>Our Story</h1>
+    <p>Born from love, built for the modern Pakistani woman 🌸</p>
+  </div>
+
+  <section class="about-story">
+    <div class="about-story-img">
+      <img src="https://images.unsplash.com/photo-1560343776-97e7d202ff0e?w=600&q=80" alt="About SaasyCharms"/>
+    </div>
+    <div class="about-story-text">
+      <p class="section-tag">About Us</p>
+      <h2>We Believe Every Girl Deserves to Feel Like a <em>Charm</em></h2>
+      <p>SaasyCharms was born from a simple idea — that beautiful jewellery shouldn't cost a fortune. We started in 2024 with a small collection of handcrafted pieces, and today we're proud to be one of Pakistan's most-loved jewellery brands.</p>
+      <p>Every piece in our collection is designed with love, crafted with care, and packaged with a smile. From dainty rings to statement necklaces, we have something for every mood, every outfit, and every occasion.</p>
+      <p>We're more than just a jewellery brand — we're a community of girls who love all things pink, pretty, and charming. ✨</p>
+      <div class="about-stats">
+        <div class="stat"><h3>5000+</h3><p>Happy Customers</p></div>
+        <div class="stat"><h3>200+</h3><p>Unique Designs</p></div>
+        <div class="stat"><h3>3+</h3><p>Years of Love</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-values">
+    <div class="section-header">
+      <p class="section-tag">What We Stand For</p>
+      <h2>Our Values 💖</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">💎</div>
+        <h4>Quality First</h4>
+        <p>Every piece is made with high-quality materials, tested for durability and comfort before it reaches you.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🌸</div>
+        <h4>Affordable Luxury</h4>
+        <p>We believe luxury shouldn't be exclusive. Our pieces are designed to feel premium without the premium price tag.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h4>Customer Love</h4>
+        <p>Our customers are our family. We go above and beyond to ensure every order is perfect and every customer is happy.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div class="newsletter-content">
+      <h3>Stay Connected 💌</h3>
+      <p>Subscribe for exclusive deals, new arrivals & pink vibes only.</p>
+      <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+        <input type="email" placeholder="Enter your email address..." required/>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>Copyright © 2026 – All rights reserved by <strong>SaasyCharms</strong> 💖</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/modules/navbar.js"></script>
+  <script src="assets/js/modules/newsletter.js"></script>
+</body>
+</html>

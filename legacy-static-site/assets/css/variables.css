@@ -1,0 +1,20 @@
+/* =========================================
+   Design Tokens – colors, fonts, shadows
+   ========================================= */
+
+:root {
+  --pink:        #f4a5b8;
+  --pink-dark:   #e07a96;
+  --pink-light:  #fce4ec;
+  --pink-pale:   #fff0f5;
+  --rose:        #d4547a;
+  --white:       #ffffff;
+  --off-white:   #fdf6f8;
+  --text-dark:   #3a2030;
+  --text-mid:    #6b4c5e;
+  --text-light:  #a07890;
+  --gold:        #c9a86c;
+  --shadow:      rgba(212, 84, 122, 0.15);
+  --font-serif:  'Cormorant Garamond', serif;
+  --font-sans:   'Jost', sans-serif;
+}

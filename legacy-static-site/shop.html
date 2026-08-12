@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop – SaasyCharms</title>
+  <link rel="stylesheet" href="assets/css/main.css"/>
+  <link rel="stylesheet" href="assets/css/pages/shop.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <div class="announcement-bar">
+    <p>✨ Free shipping on orders above Rs. 2000 &nbsp;|&nbsp; Use code <strong>SAASY10</strong> for 10% off ✨</p>
+  </div>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-logo">
+      <a href="index.html">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">SaasyCharms</span>
+        <span class="logo-icon">✦</span>
+      </a>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="shop.html" class="active">Shop</a>
+      <a href="track.html">Track Order</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-icons">
+      <a href="#" title="Search"><i class="fas fa-search"></i></a>
+      <a href="#" title="Cart"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>Our Collection</h1>
+    <p>Handcrafted with love, made for you 💖</p>
+  </div>
+
+  <!-- SHOP SECTION -->
+  <section class="section shop-page">
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="rings">Rings</button>
+        <button class="filter-btn" data-filter="necklaces">Necklaces</button>
+        <button class="filter-btn" data-filter="earrings">Earrings</button>
+        <button class="filter-btn" data-filter="bracelets">Bracelets</button>
+        <button class="filter-btn" data-filter="anklets">Anklets</button>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid shop-grid">
+
+      <div class="product-card" data-category="rings">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=400&q=80" alt="Rose Gold Ring"/>
+          <div class="product-overlay"><button class="btn-add-cart">Add to Bag</button></div>
+          <span class="badge-new">New</span>
+        </div>
+        <div class="product-info">
+          <h4>Rose Gold Charm Ring</h4>
+          <p class="price">Rs. 1,299</p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="necklaces">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1601121141461-9d6647bef0a1?w=400&q=80" alt="Pearl Necklace"/>
+          <div class="product-overlay"><button class="btn-add-cart">Add to Bag</button></div>
+          <span class="badge-hot">Hot</span>
+        </div>
+        <div class="product-info">
+          <h4>Dainty Pearl Necklace</h4>
+          <p class="price">Rs. 1,899</p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="earrings">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1630975038499-ac7a3ea95e2c?w=400&q=80" alt="Crystal Earrings"/>
+          <div class="product-overlay"><button class="btn-add-cart">Add to Bag</button></div>
+        </div>
+        <div class="product-info">
+          <h4>Crystal Drop Earrings</h4>
+          <p class="price">Rs. 999</p>
+          <div class="stars">★★★★☆</div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="bracelets">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1573408301185-9519f94b2efe?w=400&q=80" alt="Gold Bracelet"/>
+          <div class="product-overlay"><button class="btn-add-cart">Add to Bag</button></div>
+          <span class="badge-sale">Sale</span>
+        </div>
+        <div class="product-info">
+          <h4>Delicate Gold Bracelet</h4>
+          <p class="price">Rs. 1,499 <span class="price-old">Rs. 1,999</span></p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="rings">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&q=80" alt="Diamond Ring"/>
+          <div class="product-overlay"><button class="btn-add-cart">Add to Bag</button></div>
+        </div>
+        <div class="product-info">
+          <h4>Crystal Solitaire Ring</h4>
+          <p class="price">Rs. 1,599</p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="necklaces">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=400&q=80" alt="Gold Necklace"/>
+          <div class="product-overlay"><button class="btn-add-cart">Add to Bag</button></div>
+          <span class="badge-new">New</span>
+        </div>
+        <div class="product-info">
+          <h4>Layered Gold Necklace</h4>
+          <p class="price">Rs. 2,199</p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="earrings">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Hoop Earrings"/>
+          <div class="product-overlay"><button class="btn-add-cart">Add to Bag</button></div>
+        </div>
+        <div class="product-info">
+          <h4>Mini Gold Hoop Earrings</h4>
+          <p class="price">Rs. 799</p>
+          <div class="stars">★★★★☆</div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="anklets">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80" alt="Anklet"/>
+          <div class="product-overlay"><button class="btn-add-cart">Add to Bag</button></div>
+        </div>
+        <div class="product-info">
+          <h4>Charm Anklet</h4>
+          <p class="price">Rs. 699</p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-icon">✦</span>
+          <span class="logo-text">SaasyCharms</span>
+          <span class="logo-icon">✦</span>
+        </div>
+        <p>Delicate jewellery for the girl who loves all things pink, pretty & charming.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="track.html">Track Order</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h5>Collections</h5>
+        <ul>
+          <li><a href="shop.html">Rings</a></li>
+          <li><a href="shop.html">Necklaces</a></li>
+          <li><a href="shop.html">Earrings</a></li>
+          <li><a href="shop.html">Bracelets</a></li>
+          <li><a href="shop.html">Anklets</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h5>Contact Us</h5>
+        <ul>
+          <li><i class="fas fa-envelope"></i> hello@saasycharms.pk</li>
+          <li><i class="fab fa-whatsapp"></i> +92 300 0000000</li>
+          <li><i class="fas fa-map-marker-alt"></i> Pakistan</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © 2026 – All rights reserved by <strong>SaasyCharms</strong> 💖</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/modules/navbar.js"></script>
+  <script src="assets/js/modules/cart.js"></script>
+  <script src="assets/js/modules/scroll-reveal.js"></script>
+  <script src="assets/js/pages/shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+/* ===== PRODUCT CARD (shared: home + shop) ===== */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-bottom: 48px;
+}
+
+.product-card {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--pink-light);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px var(--shadow);
+  border-color: transparent;
+}
+
+.product-img {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.product-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.product-card:hover .product-img img { transform: scale(1.06); }
+
+.product-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(212,84,122,0.18);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.product-card:hover .product-overlay { opacity: 1; }
+
+.btn-add-cart {
+  background: var(--rose);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s;
+  font-family: var(--font-sans);
+}
+
+.btn-add-cart:hover { transform: scale(1.05); }
+
+.badge-new, .badge-hot, .badge-sale {
+  position: absolute;
+  top: 14px; left: 14px;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.badge-new { background: var(--pink); color: #fff; }
+.badge-hot { background: var(--rose); color: #fff; }
+.badge-sale { background: var(--gold); color: #fff; }
+
+.product-info {
+  padding: 18px 20px;
+}
+
+.product-category {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.product-info h4 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.price {
+  color: var(--rose);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.price-old {
+  color: var(--text-light);
+  font-size: 13px;
+  text-decoration: line-through;
+  font-weight: 400;
+  margin-left: 6px;
+}
+
+.stars {
+  color: var(--gold);
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.review-count {
+  color: var(--text-light);
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.center-btn { text-align: center; }
+
+@media (max-width: 1024px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .products-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SaasyCharms – Jewellery</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/pages/home.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ===== ANNOUNCEMENT BAR ===== -->
+  <div class="announcement-bar">
+    <p>✨ Free shipping on orders above Rs. 2000 &nbsp;|&nbsp; Use code <strong>SAASY10</strong> for 10% off ✨</p>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-logo">
+      <a href="index.html">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">SaasyCharms</span>
+        <span class="logo-icon">✦</span>
+      </a>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="track.html">Track Order</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-icons">
+      <a href="#" title="Search"><i class="fas fa-search"></i></a>
+      <a href="#" title="Cart"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-tag">New Collection 2026</p>
+      <h1>Wear Your <em>Charm</em>,<br/>Own Your Story</h1>
+      <p class="hero-sub">Delicate, handcrafted jewellery made for the modern woman who loves all things pink & pretty.</p>
+      <div class="hero-btns">
+        <a href="shop.html" class="btn-primary">Shop Now</a>
+        <a href="about.html" class="btn-outline">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-img-circle">
+        <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=500&q=80" alt="Jewellery" />
+      </div>
+      <div class="floating-badge badge1">✦ Handcrafted</div>
+      <div class="floating-badge badge2">💖 New Arrivals</div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>✦ Rings</span><span>✦ Necklaces</span><span>✦ Earrings</span>
+      <span>✦ Bracelets</span><span>✦ Anklets</span><span>✦ Charms</span>
+      <span>✦ Rings</span><span>✦ Necklaces</span><span>✦ Earrings</span>
+      <span>✦ Bracelets</span><span>✦ Anklets</span><span>✦ Charms</span>
+    </div>
+  </div>
+
+  <!-- ===== CATEGORIES ===== -->
+  <section class="section categories" id="shop">
+    <div class="section-header">
+      <p class="section-tag">Browse By</p>
+      <h2>Our Collections</h2>
+    </div>
+    <div class="categories-grid">
+      <div class="cat-card">
+        <div class="cat-img">
+          <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&q=80" alt="Rings"/>
+        </div>
+        <h3>Rings</h3>
+        <a href="shop.html">Shop Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="cat-card">
+        <div class="cat-img">
+          <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=400&q=80" alt="Necklaces"/>
+        </div>
+        <h3>Necklaces</h3>
+        <a href="shop.html">Shop Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="cat-card">
+        <div class="cat-img">
+          <img src="https://images.unsplash.com/photo-1630975038499-ac7a3ea95e2c?w=400&q=80" alt="Earrings"/>
+        </div>
+        <h3>Earrings</h3>
+        <a href="shop.html">Shop Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="cat-card">
+        <div class="cat-img">
+          <img src="https://images.unsplash.com/photo-1573408301185-9519f94b2efe?w=400&q=80" alt="Bracelets"/>
+        </div>
+        <h3>Bracelets</h3>
+        <a href="shop.html">Shop Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED PRODUCTS ===== -->
+  <section class="section featured-products">
+    <div class="section-header">
+      <p class="section-tag">Handpicked For You</p>
+      <h2>Bestsellers</h2>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=400&q=80" alt="Rose Gold Ring"/>
+          <div class="product-overlay">
+            <button class="btn-add-cart">Add to Bag</button>
+          </div>
+          <span class="badge-new">New</span>
+        </div>
+        <div class="product-info">
+          <h4>Rose Gold Charm Ring</h4>
+          <p class="price">Rs. 1,299</p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1601121141461-9d6647bef0a1?w=400&q=80" alt="Pearl Necklace"/>
+          <div class="product-overlay">
+            <button class="btn-add-cart">Add to Bag</button>
+          </div>
+          <span class="badge-hot">Hot</span>
+        </div>
+        <div class="product-info">
+          <h4>Dainty Pearl Necklace</h4>
+          <p class="price">Rs. 1,899</p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1630975038499-ac7a3ea95e2c?w=400&q=80" alt="Crystal Earrings"/>
+          <div class="product-overlay">
+            <button class="btn-add-cart">Add to Bag</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <h4>Crystal Drop Earrings</h4>
+          <p class="price">Rs. 999</p>
+          <div class="stars">★★★★☆</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1573408301185-9519f94b2efe?w=400&q=80" alt="Gold Bracelet"/>
+          <div class="product-overlay">
+            <button class="btn-add-cart">Add to Bag</button>
+          </div>
+          <span class="badge-sale">Sale</span>
+        </div>
+        <div class="product-info">
+          <h4>Delicate Gold Bracelet</h4>
+          <p class="price">Rs. 1,499 <span class="price-old">Rs. 1,999</span></p>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="center-btn">
+      <a href="shop.html" class="btn-primary">View All Products</a>
+    </div>
+  </section>
+
+  <!-- ===== BANNER ===== -->
+  <section class="promo-banner">
+    <div class="promo-content">
+      <p class="section-tag" style="color:#fff">Limited Time</p>
+      <h2>Get 10% Off Your First Order 💖</h2>
+      <p>Use code <strong>SAASY10</strong> at checkout</p>
+      <a href="shop.html" class="btn-white">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- ===== WHY US ===== -->
+  <section class="section why-us">
+    <div class="section-header">
+      <p class="section-tag">Why SaasyCharms</p>
+      <h2>Made With Love ♡</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">💎</div>
+        <h4>Premium Quality</h4>
+        <p>Each piece is carefully crafted using high-quality materials that last.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎁</div>
+        <h4>Beautiful Packaging</h4>
+        <p>Every order comes in our signature pink gift box, ready to gift.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🚚</div>
+        <h4>Fast Delivery</h4>
+        <p>Quick and secure shipping all across Pakistan.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💖</div>
+        <h4>Made With Love</h4>
+        <p>Every charm is designed with passion for the modern Pakistani woman.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section testimonials">
+    <div class="section-header">
+      <p class="section-tag">Customer Love</p>
+      <h2>What Our Girls Say ✨</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Absolutely obsessed with my rose gold ring! The quality is amazing and the packaging was SO pretty. Will definitely order again 💕"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">A</div>
+          <span>Aiza Khan, Lahore</span>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"I gifted the pearl necklace to my sister and she LOVED it. Delivery was fast and everything was perfect. SaasyCharms is my go-to!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">S</div>
+          <span>Sara Malik, Karachi</span>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"The earrings are even more beautiful in person! Lightweight and dainty, exactly what I was looking for. 10/10 recommend 🌸"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">M</div>
+          <span>Mahnoor, Islamabad</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="newsletter">
+    <div class="newsletter-content">
+      <h3>Join the Saasy Club 💌</h3>
+      <p>Subscribe for exclusive deals, new arrivals & pink vibes only.</p>
+      <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+        <input type="email" placeholder="Enter your email address..." required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-icon">✦</span>
+          <span class="logo-text">SaasyCharms</span>
+          <span class="logo-icon">✦</span>
+        </div>
+        <p>Delicate jewellery for the girl who loves all things pink, pretty & charming.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="track.html">Track Order</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h5>Collections</h5>
+        <ul>
+          <li><a href="shop.html">Rings</a></li>
+          <li><a href="shop.html">Necklaces</a></li>
+          <li><a href="shop.html">Earrings</a></li>
+          <li><a href="shop.html">Bracelets</a></li>
+          <li><a href="shop.html">Anklets</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h5>Contact Us</h5>
+        <ul>
+          <li><i class="fas fa-envelope"></i> hello@saasycharms.pk</li>
+          <li><i class="fab fa-whatsapp"></i> +92 300 0000000</li>
+          <li><i class="fas fa-map-marker-alt"></i> Pakistan</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © 2026 – All rights reserved by <strong>SaasyCharms</strong> 💖</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/modules/navbar.js"></script>
+  <script src="assets/js/modules/cart.js"></script>
+  <script src="assets/js/modules/newsletter.js"></script>
+  <script src="assets/js/modules/scroll-reveal.js"></script>
+</body>
+</html>

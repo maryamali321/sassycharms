@@ -1,0 +1,127 @@
+/* ===== NAVBAR ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 6%;
+  border-bottom: 1px solid var(--pink-light);
+  transition: box-shadow 0.3s;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 4px 24px var(--shadow);
+}
+
+.nav-logo a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--rose);
+  letter-spacing: 1px;
+}
+
+.logo-icon { font-size: 0.9rem; color: var(--gold); }
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  color: var(--text-mid);
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--pink-dark);
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--rose);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 16px;
+  color: var(--text-mid);
+}
+
+.nav-icons a {
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-icons a:hover { color: var(--rose); }
+
+.cart-count {
+  position: absolute;
+  top: -8px; right: -8px;
+  background: var(--rose);
+  color: #fff;
+  font-size: 10px;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--rose);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0; right: 0;
+    width: 260px; height: 100vh;
+    background: #fff;
+    padding: 80px 36px;
+    gap: 24px;
+    box-shadow: -8px 0 40px var(--shadow);
+    z-index: 999;
+  }
+
+  .nav-links.open { display: flex; }
+  .hamburger { display: flex; }
+}

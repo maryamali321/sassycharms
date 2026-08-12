@@ -1,0 +1,16 @@
+/* ===== PAGE HEADER (shared banner for inner pages) ===== */
+.page-header {
+  background: linear-gradient(135deg, var(--pink-pale), var(--pink-light));
+  text-align: center;
+  padding: 80px 6% 60px;
+}
+
+.page-header h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--text-dark);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.page-header p { color: var(--text-mid); font-size: 16px; }

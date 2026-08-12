@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Track Order – SaasyCharms</title>
+  <link rel="stylesheet" href="assets/css/main.css"/>
+  <link rel="stylesheet" href="assets/css/pages/track.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <div class="announcement-bar">
+    <p>✨ Free shipping on orders above Rs. 2000 &nbsp;|&nbsp; Use code <strong>SAASY10</strong> for 10% off ✨</p>
+  </div>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-logo">
+      <a href="index.html">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">SaasyCharms</span>
+        <span class="logo-icon">✦</span>
+      </a>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="track.html" class="active">Track Order</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-icons">
+      <a href="#"><i class="fas fa-search"></i></a>
+      <a href="#"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+      <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <h1>Track Your Order</h1>
+    <p>Enter your order details to see the status 📦</p>
+  </div>
+
+  <section class="track-section">
+    <div class="track-box">
+      <div class="track-icon">📦</div>
+      <h2>Order Tracking</h2>
+      <p>Enter your order ID and email address to track your SaasyCharms order in real time.</p>
+      <form class="track-form" onsubmit="trackOrder(event)">
+        <div class="form-group">
+          <label>Order ID</label>
+          <input type="text" placeholder="e.g. SC-20260001" required />
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com" required />
+        </div>
+        <button type="submit" class="btn-primary">Track My Order</button>
+      </form>
+
+      <div class="track-result" id="trackResult">
+        <h4>Order #SC-20260001 – Rose Gold Charm Ring</h4>
+        <div class="status-steps">
+          <div class="status-step">
+            <div class="step-dot done"><i class="fas fa-check"></i></div>
+            <div class="step-info">
+              <p>Order Placed</p>
+              <span>Apr 3, 2026 – 10:00 AM</span>
+            </div>
+          </div>
+          <div class="status-step">
+            <div class="step-dot done"><i class="fas fa-check"></i></div>
+            <div class="step-info">
+              <p>Order Confirmed</p>
+              <span>Apr 3, 2026 – 12:30 PM</span>
+            </div>
+          </div>
+          <div class="status-step">
+            <div class="step-dot active"><i class="fas fa-box"></i></div>
+            <div class="step-info">
+              <p>Packed & Dispatched</p>
+              <span>Apr 4, 2026 – 09:00 AM</span>
+            </div>
+          </div>
+          <div class="status-step">
+            <div class="step-dot"><i class="fas fa-truck"></i></div>
+            <div class="step-info">
+              <p>Out for Delivery</p>
+              <span>Estimated: Apr 6, 2026</span>
+            </div>
+          </div>
+          <div class="status-step">
+            <div class="step-dot"><i class="fas fa-home"></i></div>
+            <div class="step-info">
+              <p>Delivered</p>
+              <span>Pending</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>Copyright © 2026 – All rights reserved by <strong>SaasyCharms</strong> 💖</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/modules/navbar.js"></script>
+  <script src="assets/js/pages/track.js"></script>
+</body>
+</html>

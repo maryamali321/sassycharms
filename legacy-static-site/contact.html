@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – SaasyCharms</title>
+  <link rel="stylesheet" href="assets/css/main.css"/>
+  <link rel="stylesheet" href="assets/css/pages/contact.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <div class="announcement-bar">
+    <p>✨ Free shipping on orders above Rs. 2000 &nbsp;|&nbsp; Use code <strong>SAASY10</strong> for 10% off ✨</p>
+  </div>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-logo">
+      <a href="index.html"><span class="logo-icon">✦</span><span class="logo-text">SaasyCharms</span><span class="logo-icon">✦</span></a>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="track.html">Track Order</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <div class="nav-icons">
+      <a href="#"><i class="fas fa-search"></i></a>
+      <a href="#"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+      <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <h1>Get In Touch</h1>
+    <p>We'd love to hear from you! 💌</p>
+  </div>
+
+  <section class="contact-section">
+    <div class="contact-info">
+      <h2>Let's Chat 🌸</h2>
+      <p>Have a question about an order, a product, or just want to say hello? We're here for you. Reach out and we'll get back to you as soon as possible.</p>
+      <div class="info-items">
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <h5>Email Us</h5>
+            <p>hello@saasycharms.pk</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+          <div>
+            <h5>WhatsApp</h5>
+            <p>+92 300 0000000</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fab fa-instagram"></i></div>
+          <div>
+            <h5>Instagram</h5>
+            <p>@saasycharms</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <h5>Working Hours</h5>
+            <p>Mon – Sat, 10 AM – 8 PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-box">
+      <h3>Send Us a Message ✦</h3>
+      <form class="contact-form" onsubmit="sendMessage(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Aiza" required/>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Khan" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com" required/>
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <select>
+            <option>Order Inquiry</option>
+            <option>Product Question</option>
+            <option>Return / Exchange</option>
+            <option>Wholesale</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="5" placeholder="Write your message here..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Send Message 💌</button>
+      </form>
+      <div class="success-msg" id="successMsg">
+        ✓ Thank you! Your message has been sent. We'll get back to you within 24 hours 💖
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>Copyright © 2026 – All rights reserved by <strong>SaasyCharms</strong> 💖</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/modules/navbar.js"></script>
+  <script src="assets/js/pages/contact.js"></script>
+</body>
+</html>

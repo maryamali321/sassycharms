@@ -1,0 +1,11 @@
+{
+  "name": "saasycharms",
+  "version": "1.0.0",
+  "description": "SaasyCharms – pink & pretty handcrafted jewellery storefront (static multi-page site).",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/dev-server.js 5500",
+    "start": "npm run dev"
+  },
+  "license": "UNLICENSED"
+}
