@@ -2,23 +2,20 @@
   "name": "saasycharms",
   "version": "1.0.0",
   "private": true,
-  "description": "SaasyCharms – handcrafted jewellery storefront (Next.js + Sanity CMS).",
+  "description": "SaasyCharms – handcrafted jewellery storefront (Next.js + MongoDB + Cloudinary).",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "seed": "node --env-file=.env.local scripts/seed.mjs"
   },
   "dependencies": {
-    "@sanity/client": "^7.26.2",
-    "@sanity/image-url": "^2.1.1",
-    "@sanity/vision": "^6.9.1",
+    "cloudinary": "^2.10.1",
+    "mongodb": "^7.5.0",
     "next": "^16.3.0",
-    "next-sanity": "^13.3.1",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "sanity": "^6.9.1",
-    "styled-components": "^6.5.1"
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.6",

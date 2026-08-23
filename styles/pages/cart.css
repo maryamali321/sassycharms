@@ -1,0 +1,217 @@
+/* =========================================
+   Cart Page – mobile-first
+   ========================================= */
+
+.cart-page {
+  padding: 48px 6% 90px;
+}
+
+.cart-empty {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.cart-empty-icon { font-size: 3rem; margin-bottom: 16px; }
+
+.cart-empty h2 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.cart-empty p { color: var(--text-mid); margin-bottom: 24px; }
+
+.cart-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  grid-template-areas:
+    'img info remove'
+    'qty qty total';
+  align-items: center;
+  gap: 12px 16px;
+  background: #fff;
+  border: 1px solid var(--pink-light);
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.cart-item-img {
+  grid-area: img;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cart-item-info { grid-area: info; }
+
+.cart-item-info h4 {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.cart-item-price { color: var(--text-light); font-size: 13px; }
+
+.cart-item-remove {
+  grid-area: remove;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  font-size: 15px;
+  padding: 6px;
+}
+
+.cart-item-remove:hover { color: var(--rose); }
+
+.cart-item-qty {
+  grid-area: qty;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-self: start;
+}
+
+.cart-item-qty button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--pink-light);
+  background: var(--off-white);
+  color: var(--text-dark);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.cart-item-qty span { min-width: 18px; text-align: center; font-size: 14px; }
+
+.cart-item-total {
+  grid-area: total;
+  justify-self: end;
+  font-weight: 600;
+  color: var(--rose);
+  font-size: 14px;
+}
+
+.cart-summary {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: 0 12px 48px var(--shadow);
+  align-self: flex-start;
+}
+
+.cart-summary h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin-bottom: 18px;
+}
+
+.cart-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--text-mid);
+  padding: 8px 0;
+}
+
+.cart-summary-discount { color: var(--rose); }
+
+.cart-summary-total {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-dark);
+  border-top: 1px solid var(--pink-light);
+  margin-top: 8px;
+  padding-top: 14px;
+}
+
+.cart-coupon {
+  display: flex;
+  gap: 10px;
+  margin: 18px 0 6px;
+}
+
+.cart-coupon input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1.5px solid var(--pink-light);
+  border-radius: 10px;
+  font-size: 13px;
+  background: var(--off-white);
+  outline: none;
+}
+
+.cart-coupon input:focus { border-color: var(--pink-dark); background: #fff; }
+
+.cart-coupon button {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  background: var(--text-dark);
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.cart-coupon-message { font-size: 13px; color: var(--text-mid); margin-bottom: 10px; }
+
+.cart-checkout-btn {
+  width: 100%;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.cart-note {
+  font-size: 12px;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: 12px;
+}
+
+@media (min-width: 768px) {
+  .cart-item {
+    grid-template-columns: 80px 2fr 1fr 1fr auto;
+    grid-template-areas: 'img info qty total remove';
+  }
+
+  .cart-item-img { width: 80px; height: 80px; }
+
+  .cart-item-qty { justify-self: center; }
+}
+
+@media (min-width: 1024px) {
+  .cart-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .cart-items { flex: 2; }
+
+  .cart-summary {
+    flex: 1;
+    position: sticky;
+    top: 100px;
+    min-width: 320px;
+  }
+}

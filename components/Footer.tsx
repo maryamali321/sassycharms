@@ -9,6 +9,9 @@ const COPYRIGHT = (
   </div>
 );
 
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+const whatsappUrl = whatsappNumber ? `https://wa.me/${whatsappNumber}` : '#';
+
 export default function Footer({ simple = false }: { simple?: boolean }) {
   if (simple) {
     return <footer className="footer">{COPYRIGHT}</footer>;
@@ -19,14 +22,16 @@ export default function Footer({ simple = false }: { simple?: boolean }) {
       <div className="footer-top">
         <div className="footer-brand">
           <div className="footer-logo">
-            <BrandLogo href="/" light compact />
+            <BrandLogo href="/" compact />
           </div>
           <p>Delicate jewellery for the girl who loves all things pink, pretty & charming.</p>
           <div className="social-links">
             <a href="#" aria-label="Instagram"><i className="fab fa-instagram" /></a>
             <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f" /></a>
             <a href="#" aria-label="TikTok"><i className="fab fa-tiktok" /></a>
-            <a href="#" aria-label="WhatsApp"><i className="fab fa-whatsapp" /></a>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <i className="fab fa-whatsapp" />
+            </a>
           </div>
         </div>
 
@@ -56,7 +61,12 @@ export default function Footer({ simple = false }: { simple?: boolean }) {
           <h5>Contact Us</h5>
           <ul>
             <li><i className="fas fa-envelope" /> hello@saasycharms.pk</li>
-            <li><i className="fab fa-whatsapp" /> +92 300 0000000</li>
+            <li>
+              <i className="fab fa-whatsapp" />{' '}
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                +92 300 0000000
+              </a>
+            </li>
             <li><i className="fas fa-map-marker-alt" /> Pakistan</li>
           </ul>
         </div>

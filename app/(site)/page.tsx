@@ -7,10 +7,10 @@ import Newsletter from '@/components/Newsletter';
 import Footer from '@/components/Footer';
 
 const CATEGORIES = [
-  { name: 'Rings', count: '12 Products', image: 'https://images.unsplash.com/photo-1567523977592-7959bc5df51e?w=400&q=80' },
-  { name: 'Necklaces', count: '18 Products', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=400&q=80' },
-  { name: 'Earrings', count: '9 Products', image: 'https://images.unsplash.com/photo-1765560172744-dcc030763771?w=400&q=80' },
-  { name: 'Bracelets', count: '14 Products', image: 'https://images.unsplash.com/photo-1611598935678-c88dca238fce?w=400&q=80' },
+  { name: 'Rings', value: 'rings', count: '12 Products', image: 'https://images.unsplash.com/photo-1567523977592-7959bc5df51e?w=400&q=80' },
+  { name: 'Necklaces', value: 'necklaces', count: '18 Products', image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=400&q=80' },
+  { name: 'Earrings', value: 'earrings', count: '9 Products', image: 'https://images.unsplash.com/photo-1765560172744-dcc030763771?w=400&q=80' },
+  { name: 'Bracelets', value: 'bracelets', count: '14 Products', image: 'https://images.unsplash.com/photo-1611598935678-c88dca238fce?w=400&q=80' },
 ];
 
 const STATS = [
@@ -127,7 +127,7 @@ export default async function HomePage() {
         </div>
         <div className="categories-grid">
           {CATEGORIES.map((category) => (
-            <div className="cat-card" key={category.name}>
+            <Link href={`/shop?category=${category.value}`} className="cat-card" key={category.name}>
               <div className="cat-img">
                 <Image src={category.image} alt={category.name} fill sizes="(max-width: 768px) 50vw, 25vw" style={{ objectFit: 'cover' }} />
               </div>
@@ -135,11 +135,11 @@ export default async function HomePage() {
               <div className="cat-card-content">
                 <h3>{category.name}</h3>
                 <p className="cat-count">{category.count}</p>
-                <Link href="/shop">
+                <span className="cat-explore">
                   Explore <i className="fas fa-arrow-right" />
-                </Link>
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>

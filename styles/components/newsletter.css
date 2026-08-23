@@ -20,11 +20,12 @@
 
 .newsletter-form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 0;
   max-width: 500px;
   margin: 0 auto;
-  border-radius: 50px;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 24px var(--shadow);
 }
@@ -55,7 +56,9 @@
 
 .newsletter-form button:hover { opacity: 0.9; }
 
-@media (max-width: 768px) {
-  .newsletter-form { flex-direction: column; border-radius: 16px; }
-  .newsletter-form button { border-radius: 0 0 16px 16px; }
+.newsletter-form button { border-radius: 0 0 16px 16px; }
+
+@media (min-width: 768px) {
+  .newsletter-form { flex-direction: row; border-radius: 50px; }
+  .newsletter-form button { border-radius: 0; }
 }

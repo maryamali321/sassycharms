@@ -1,21 +1,24 @@
 # SaasyCharms 💖
 
-A jewellery storefront built with **Next.js 16** (App Router + TypeScript) and **Sanity CMS**, so the
-store owner can add/edit/remove products themselves — no coding needed, and **zero monthly cost**
-using free tiers.
+A jewellery storefront built with **Next.js 16** (App Router + TypeScript), **MongoDB** (products,
+discount codes, orders), and **Cloudinary** (product image hosting) — with a real, password-protected
+admin panel for managing everything, no coding needed after setup.
 
 The site works immediately with sample placeholder products, and automatically switches to real
-products the moment a Sanity project is connected. Nothing breaks in between.
+products the moment MongoDB is connected. Nothing breaks in between.
 
 ## Tech Stack
 
 | Layer          | Choice                                   | Why |
 |----------------|-------------------------------------------|-----|
 | Framework      | Next.js 16 (App Router, TypeScript)       | Fast, SEO-friendly, free hosting on Vercel |
-| Content (CMS)  | Sanity.io (free tier)                     | Client can manage products without touching code |
-| Styling        | Plain CSS (design tokens + components)    | Ported 1:1 from the original design, no extra cost/complexity |
+| Database       | MongoDB (free tier via Atlas)             | Stores products, discount codes, and orders |
+| Images         | Cloudinary (free tier)                    | Product image hosting, uploaded from the admin panel |
+| Admin panel    | Custom, at `/admin`                       | Single-password login (no accounts to manage) |
+| Checkout       | WhatsApp hand-off, no payment gateway     | Customer fills a short form, order lands pre-filled in WhatsApp for the team to confirm |
+| Styling        | Plain CSS (design tokens + components)    | No extra cost/complexity |
 | Hosting        | Vercel (free tier)                        | Zero-cost hosting, auto-deploys from Git |
-| Package manager| Yarn                                      | |
+| Package manager| npm                                       | |
 
 ## Project Structure
 
@@ -25,76 +28,107 @@ app/
   (site)/                 → all public storefront pages (share Navbar/Footer)
     page.tsx              → Home
     shop/page.tsx          → Shop (with category filter)
+    shop/[slug]/page.tsx   → Product detail page
+    cart/page.tsx          → Cart
+    checkout/page.tsx      → Checkout (redirects to WhatsApp)
     about/page.tsx
     contact/page.tsx
-    track/page.tsx
+    track/page.tsx         → Order tracking (by order number + phone)
     layout.tsx             → wraps pages with Navbar/AnnouncementBar/Cart
-  studio/[[...tool]]/page.tsx → embedded Sanity Studio admin panel (/studio)
+  admin/                  → password-protected admin panel (/admin)
+    login/page.tsx
+    (protected)/page.tsx        → dashboard
+    (protected)/products/       → product CRUD + image upload
+    (protected)/coupons/        → discount code CRUD
+    (protected)/orders/         → order list + status updates
+  api/
+    orders/                → place an order, look up an order
+    coupons/validate/      → validate a discount code at checkout
+    admin/                 → auth + CRUD endpoints backing the admin panel
 components/                → shared React components (Navbar, Footer, ProductCard, ...)
+components/admin/          → admin panel components (forms, nav, etc.)
 lib/
-  products.ts              → fetches products from Sanity (falls back to sample data)
-  fallback-products.ts     → sample product data used before Sanity is connected
-  sanity.ts / image.ts     → Sanity client + image URL helpers
-sanity/
-  schemaTypes/product.ts   → the "Product" content model shown in the Studio
-sanity.config.ts           → Sanity Studio configuration
-styles/                    → design tokens, base styles, components, per-page styles
+  products.ts              → fetches products from MongoDB (falls back to sample data)
+  fallback-products.ts     → sample product data used before MongoDB is connected
+  coupons.ts                → discount code lookup + validation
+  mongodb.ts                → MongoDB connection
+  cloudinary.ts              → Cloudinary image upload
+  admin-auth.ts              → admin password check + session cookie
+proxy.ts                    → protects /admin and /api/admin routes (Next.js 16's replacement for middleware.ts)
+scripts/seed.mjs            → one-time script to load sample products into MongoDB
+styles/                     → design tokens, base styles, components, per-page styles
+styles/admin.css            → admin panel styling (separate from the storefront's branding)
 legacy-static-site/        → the original static HTML/CSS/JS site, kept as a backup/reference
 ```
 
 ## Getting Started (local development)
 
 ```bash
-yarn install
-yarn dev
+npm install
+npm run dev
 ```
 
-Visit `http://localhost:3000`. The site will show sample sample products until Sanity is connected
-(see below).
+Visit `http://localhost:3000`. The site will show sample products until MongoDB is connected (see
+below), and `/admin` will work using the `ADMIN_PASSWORD` in your `.env.local`.
 
-## Connecting Sanity (so the client can manage products)
+## Connecting MongoDB (so the store has real inventory)
 
-This step takes about 10 minutes and is **completely free**.
-
-1. Go to [sanity.io](https://www.sanity.io/) and sign up for a free account.
-2. Run this in the project folder and follow the prompts (choose "Create new project", any dataset
-   name like `production`, and select **empty project** — our schema is already in the code):
+1. Create a free cluster at [mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas).
+2. Get your connection string (Atlas → Connect → Drivers) and add it to `.env.local`:
+   ```
+   MONGODB_URI=mongodb+srv://user:password@cluster.mongodb.net/saasycharms
+   ```
+3. Run the seed script to load starting inventory and the `SAASY10` discount code:
    ```bash
-   yarn dlx sanity init
+   npm run seed
    ```
-   Or manually create a project at [sanity.io/manage](https://www.sanity.io/manage) and note down
-   the **Project ID**.
-3. Copy `.env.local.example` to `.env.local` and fill in your project ID:
-   ```bash
-   cp .env.local.example .env.local
-   ```
-   ```
-   NEXT_PUBLIC_SANITY_PROJECT_ID=your-project-id
-   NEXT_PUBLIC_SANITY_DATASET=production
-   NEXT_PUBLIC_SANITY_API_VERSION=2024-01-01
-   ```
-4. Also add your local dev URL as a CORS origin so the Studio can talk to Sanity:
-   ```bash
-   yarn dlx sanity cors add http://localhost:3000 --credentials
-   ```
-5. Restart `yarn dev`, then open `http://localhost:3000/studio` — log in with your Sanity account,
-   and start adding products. They'll appear on the live site immediately (no redeploy needed).
+4. Restart `npm run dev`. Products now come from MongoDB, and you can manage them at `/admin`.
 
-Once real products are added, the "Show on Homepage" checkbox controls which ones appear as
-Bestsellers on the home page.
+## Connecting Cloudinary (for product image uploads)
+
+1. Create a free account at [cloudinary.com](https://cloudinary.com/).
+2. From the Cloudinary console, copy your **Cloud Name**, **API Key**, and **API Secret** into
+   `.env.local`:
+   ```
+   CLOUDINARY_CLOUD_NAME=your-cloud-name
+   CLOUDINARY_API_KEY=your-api-key
+   CLOUDINARY_API_SECRET=your-api-secret
+   ```
+3. Restart `npm run dev`. Product images uploaded through `/admin` now go to Cloudinary.
+
+## Admin Panel
+
+Visit `/admin` and log in with the password in `ADMIN_PASSWORD` (`.env.local`). From there you can:
+
+- Add, edit, and delete products (with image upload)
+- Create and manage discount codes
+- View orders and update their status (Pending → Confirmed → Packed → Shipped → Delivered)
+
+To change the admin password, just update `ADMIN_PASSWORD` in `.env.local` (or your host's
+environment variables) and redeploy — no database migration needed.
+
+## WhatsApp Checkout
+
+Set your business WhatsApp number in `.env.local`:
+
+```
+NEXT_PUBLIC_WHATSAPP_NUMBER=923001234567
+```
+
+(Full international number, digits only, no `+` or spaces.) When a customer checks out, their order
+is saved and they're redirected to WhatsApp with the order pre-filled, ready for your team to confirm.
+No payment gateway is involved — you handle payment/COD however you normally do.
 
 ## Deploying (Vercel — free)
 
 1. Push this project to a GitHub repository.
 2. Go to [vercel.com](https://vercel.com), sign up with GitHub, and click **New Project** → import
    this repo.
-3. Add the same three environment variables from `.env.local` in Vercel's project settings
-   (**Settings → Environment Variables**).
-4. Also allow your live domain in Sanity's CORS settings:
-   ```bash
-   yarn dlx sanity cors add https://your-site.vercel.app --credentials
-   ```
-5. Click Deploy. You'll get a free `*.vercel.app` URL immediately.
+3. Add all the environment variables from `.env.local` in Vercel's project settings
+   (**Settings → Environment Variables**): `MONGODB_URI`, `CLOUDINARY_CLOUD_NAME`,
+   `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`, `ADMIN_PASSWORD`, `NEXT_PUBLIC_WHATSAPP_NUMBER`,
+   `NEXT_PUBLIC_SITE_URL` (set this to your real domain once you have one).
+4. Click Deploy. You'll get a free `*.vercel.app` URL immediately.
 
 ## Adding a Custom Domain
 
@@ -105,15 +139,14 @@ Once the client buys a domain (e.g. from Namecheap/GoDaddy):
    registrar. Add those records there.
 3. Wait for DNS to propagate (a few minutes to a few hours) — Vercel issues a free SSL certificate
    automatically.
-4. Add the final domain (e.g. `https://saasycharms.pk`) as a Sanity CORS origin too:
-   ```bash
-   yarn dlx sanity cors add https://saasycharms.pk --credentials
-   ```
+4. Update `NEXT_PUBLIC_SITE_URL` to the final domain (e.g. `https://saasycharms.pk`) in Vercel's
+   environment variables and redeploy, so SEO tags and the sitemap use the right URL.
 
 ## Notes
 
 - The `legacy-static-site/` folder is the original static HTML/CSS/JS version of the site, kept
   purely as a reference/backup. It is not used by the Next.js app and can be deleted once you're
   confident everything has migrated over correctly.
-- The cart in the navbar is a simple in-memory demo counter (no real checkout yet) — wire it up to
-  a real payment/checkout flow (e.g. Stripe, JazzCash, EasyPaisa) when ready to accept real orders.
+- If MongoDB or Cloudinary aren't configured, the storefront still runs on bundled sample data —
+  useful for local development before you've set anything up, and as a safety net if the database
+  is briefly unreachable in production.

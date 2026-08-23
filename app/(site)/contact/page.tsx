@@ -3,7 +3,13 @@ import type { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 
-export const metadata: Metadata = { title: 'Contact' };
+export const metadata: Metadata = {
+  title: 'Contact',
+  description: 'Get in touch with SaasyCharms via email, WhatsApp, or Instagram.',
+};
+
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+const whatsappUrl = whatsappNumber ? `https://wa.me/${whatsappNumber}` : '#';
 
 export default function ContactPage() {
   return (
@@ -32,7 +38,11 @@ export default function ContactPage() {
               <div className="info-icon"><i className="fab fa-whatsapp" /></div>
               <div>
                 <h5>WhatsApp</h5>
-                <p>+92 300 0000000</p>
+                <p>
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                    +92 300 0000000
+                  </a>
+                </p>
               </div>
             </div>
             <div className="info-item">

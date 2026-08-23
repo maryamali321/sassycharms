@@ -17,13 +17,36 @@ const jost = Jost({
   display: 'swap',
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+const SITE_DESCRIPTION =
+  'Delicate, handcrafted jewellery made for the modern woman who loves all things pink & pretty.';
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'SaasyCharms – Jewellery',
     template: '%s – SaasyCharms',
   },
-  description:
-    'Delicate, handcrafted jewellery made for the modern woman who loves all things pink & pretty.',
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    type: 'website',
+    siteName: 'SaasyCharms',
+    title: 'SaasyCharms – Jewellery',
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SaasyCharms – Jewellery',
+    description: SITE_DESCRIPTION,
+  },
+};
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'SaasyCharms',
+  url: SITE_URL,
+  sameAs: [],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -37,6 +60,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
       </head>
       <body>{children}</body>

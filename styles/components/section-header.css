@@ -1,6 +1,6 @@
 /* ===== SECTION WRAPPER & HEADER ===== */
 .section {
-  padding: 90px 6%;
+  padding: var(--space-section-y) 6%;
 }
 
 .section-header {
@@ -53,6 +53,3 @@
 
 .section-tag-light .tag-icon { color: #fff; }
 
-@media (max-width: 480px) {
-  .section { padding: 60px 5%; }
-}

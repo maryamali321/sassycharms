@@ -1,9 +1,9 @@
 import type { Product } from './types';
 
 /**
- * Sample product data used until a real Sanity project is connected
- * (see .env.local.example) or until the client adds real products
- * through the /studio admin panel. Lets the site go live on day one.
+ * Sample product data used until MongoDB is connected (see .env.local.example)
+ * or until the store owner adds real products through /admin. Lets the site
+ * go live on day one, and acts as a resilience fallback if the DB is down.
  */
 export const fallbackProducts: Product[] = [
   {
@@ -17,7 +17,7 @@ export const fallbackProducts: Product[] = [
     reviews: 128,
     imageUrl: 'https://images.unsplash.com/photo-1705326455036-0fab8ecba04d?w=500&q=80',
     featured: true,
-    inStock: true,
+    stockQuantity: 15,
   },
   {
     _id: 'sample-pearl-necklace',
@@ -30,7 +30,7 @@ export const fallbackProducts: Product[] = [
     reviews: 96,
     imageUrl: 'https://images.unsplash.com/photo-1595345705177-ffe090eb0784?w=500&q=80',
     featured: true,
-    inStock: true,
+    stockQuantity: 15,
   },
   {
     _id: 'sample-crystal-earrings',
@@ -42,7 +42,7 @@ export const fallbackProducts: Product[] = [
     reviews: 54,
     imageUrl: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&q=80',
     featured: true,
-    inStock: true,
+    stockQuantity: 15,
   },
   {
     _id: 'sample-gold-bracelet',
@@ -56,7 +56,7 @@ export const fallbackProducts: Product[] = [
     reviews: 142,
     imageUrl: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&q=80',
     featured: true,
-    inStock: true,
+    stockQuantity: 15,
   },
   {
     _id: 'sample-solitaire-ring',
@@ -67,7 +67,7 @@ export const fallbackProducts: Product[] = [
     rating: 5,
     reviews: 87,
     imageUrl: 'https://images.unsplash.com/photo-1587593692659-38c32c496642?w=500&q=80',
-    inStock: true,
+    stockQuantity: 15,
   },
   {
     _id: 'sample-layered-necklace',
@@ -79,7 +79,7 @@ export const fallbackProducts: Product[] = [
     rating: 5,
     reviews: 63,
     imageUrl: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=500&q=80',
-    inStock: true,
+    stockQuantity: 15,
   },
   {
     _id: 'sample-hoop-earrings',
@@ -90,7 +90,7 @@ export const fallbackProducts: Product[] = [
     rating: 4,
     reviews: 41,
     imageUrl: 'https://images.unsplash.com/photo-1535556116002-6281ff3e9f36?w=500&q=80',
-    inStock: true,
+    stockQuantity: 15,
   },
   {
     _id: 'sample-charm-anklet',
@@ -101,6 +101,6 @@ export const fallbackProducts: Product[] = [
     rating: 5,
     reviews: 72,
     imageUrl: 'https://images.unsplash.com/photo-1744722091259-ed1cf11ac97f?w=500&q=80',
-    inStock: true,
+    stockQuantity: 15,
   },
 ];

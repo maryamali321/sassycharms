@@ -1,0 +1,8 @@
+import type { Metadata } from 'next';
+import CouponForm from '@/components/admin/CouponForm';
+
+export const metadata: Metadata = { title: 'Add Coupon' };
+
+export default function NewCouponPage() {
+  return <CouponForm />;
+}

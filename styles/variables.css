@@ -17,4 +17,10 @@
   --shadow:      rgba(212, 84, 122, 0.15);
   --font-serif:  var(--font-serif-google), 'Cormorant Garamond', serif;
   --font-sans:   var(--font-sans-google), 'Jost', sans-serif;
+
+  /* Fluid spacing — scales continuously between mobile and desktop
+     instead of jumping at a single breakpoint. */
+  --font-size-base:  clamp(15px, 0.6vw + 13.5px, 16px);
+  --space-section-y: clamp(48px, 4vw + 32px, 90px);
+  --space-header-y:  clamp(48px, 6vw + 24px, 80px);
 }

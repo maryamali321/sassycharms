@@ -51,10 +51,10 @@ export default function Navbar() {
         <a href="#" title="Search">
           <i className="fas fa-search" />
         </a>
-        <a href="#" title="Cart">
+        <Link href="/cart" title="Cart">
           <i className="fas fa-shopping-bag" />
           <span className="cart-count">{count}</span>
-        </a>
+        </Link>
         <div className="hamburger" onClick={() => setMenuOpen((open) => !open)}>
           <span></span>
           <span></span>

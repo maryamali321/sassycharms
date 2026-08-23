@@ -4,7 +4,10 @@ import Image from 'next/image';
 import Newsletter from '@/components/Newsletter';
 import Footer from '@/components/Footer';
 
-export const metadata: Metadata = { title: 'About' };
+export const metadata: Metadata = {
+  title: 'About',
+  description: 'The story behind SaasyCharms — delicate, handcrafted jewellery made with love in Pakistan.',
+};
 
 const STATS = [
   { value: '5000+', label: 'Happy Customers' },
@@ -41,7 +44,7 @@ export default function AboutPage() {
       <section className="about-story">
         <div className="about-story-img">
           <Image
-            src="https://images.unsplash.com/photo-1758995115643-1e8348bfde39?w=600&q=80"
+            src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=700&q=80"
             alt="About SaasyCharms"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"

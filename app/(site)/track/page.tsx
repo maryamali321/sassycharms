@@ -3,7 +3,10 @@ import type { Metadata } from 'next';
 import TrackOrderForm from '@/components/TrackOrderForm';
 import Footer from '@/components/Footer';
 
-export const metadata: Metadata = { title: 'Track Order' };
+export const metadata: Metadata = {
+  title: 'Track Order',
+  description: 'Look up your SaasyCharms order status using your order number and phone number.',
+};
 
 export default function TrackPage() {
   return (

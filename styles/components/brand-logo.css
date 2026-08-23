@@ -1,114 +1,45 @@
-/* ===== BRAND LOGO (Kavior-style stacked mark) ===== */
+/* ===== BRAND LOGO – full original artwork ===== */
 .brand-logo-link {
   display: inline-flex;
+  align-items: center;
   text-decoration: none;
   color: inherit;
 }
 
 .brand-logo {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 4px;
-  line-height: 1;
+  line-height: 0;
 }
 
-.brand-logo-mark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  overflow: hidden;
-  background: transparent;
-  border: none;
-  box-shadow: 0 4px 14px var(--shadow);
-  flex-shrink: 0;
+.brand-logo-img {
+  height: 60px;
+  width: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px var(--shadow);
   transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.brand-logo-link:hover .brand-logo-mark {
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px var(--shadow);
-}
-
-.brand-logo-mark img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
-.brand-logo-wordmark {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
+.brand-logo-link:hover .brand-logo-img {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 8px 22px var(--shadow);
 }
 
-.brand-logo-name {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--text-dark);
-}
-
-.brand-logo-sub {
-  font-family: var(--font-sans);
-  font-size: 0.58rem;
-  font-weight: 500;
-  letter-spacing: 0.48em;
-  text-transform: uppercase;
-  color: var(--text-mid);
-  padding-left: 0.48em; /* optical balance for letter-spacing */
-}
-
-.brand-logo-compact .brand-logo-mark {
-  width: 48px;
-  height: 48px;
-}
-
-.brand-logo-compact .brand-logo-name {
-  font-size: 0.95rem;
-  letter-spacing: 0.14em;
-}
-
-.brand-logo-compact .brand-logo-sub {
-  font-size: 0.55rem;
-  letter-spacing: 0.36em;
-  padding-left: 0.36em;
-}
-
-/* Footer / dark surfaces */
-.brand-logo-light .brand-logo-mark {
-  border-color: rgba(255, 255, 255, 0.2);
+.brand-logo-compact .brand-logo-img {
+  height: 84px;
+  border-radius: 12px;
   box-shadow: none;
 }
 
-.brand-logo-light .brand-logo-name {
-  color: #fff;
+@media (min-width: 480px) {
+  .brand-logo-img { height: 72px; }
 }
 
-.brand-logo-light .brand-logo-sub {
-  color: var(--pink);
-}
-
-@media (max-width: 480px) {
-  .brand-logo-mark {
-    width: 52px;
-    height: 52px;
-  }
-
-  .brand-logo-name {
-    font-size: 1rem;
-    letter-spacing: 0.14em;
-  }
-
-  .brand-logo-sub {
-    font-size: 0.55rem;
-    letter-spacing: 0.34em;
-    padding-left: 0.34em;
+@media (min-width: 768px) {
+  .brand-logo-img {
+    height: 104px;
+    border-radius: 14px;
   }
 }

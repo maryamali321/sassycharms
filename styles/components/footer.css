@@ -3,7 +3,7 @@
 
 .footer-top {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 40px;
   padding: 70px 6% 50px;
 }
@@ -12,18 +12,6 @@
   display: flex;
   align-items: flex-start;
   margin-bottom: 18px;
-}
-
-.footer-logo .brand-logo {
-  align-items: flex-start;
-}
-
-.footer-logo .brand-logo-wordmark {
-  align-items: flex-start;
-}
-
-.footer-logo .brand-logo-sub {
-  padding-left: 0;
 }
 
 .footer-brand p {
@@ -97,10 +85,10 @@
   color: rgba(255,255,255,0.4);
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 768px) {
   .footer-top { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 768px) {
-  .footer-top { grid-template-columns: 1fr; }
+@media (min-width: 1024px) {
+  .footer-top { grid-template-columns: 2fr 1fr 1fr 1fr; }
 }

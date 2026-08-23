@@ -1,0 +1,114 @@
+/* =========================================
+   Product Detail Page – mobile-first
+   ========================================= */
+
+.product-detail-page { padding-top: 48px; }
+
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.product-detail-gallery { display: flex; flex-direction: column; gap: 12px; }
+
+.product-detail-main-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--pink-pale);
+}
+
+.product-detail-thumbs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.product-detail-thumbs button {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.product-detail-thumbs button.active { border-color: var(--rose); }
+
+.product-detail-info h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  color: var(--text-dark);
+  margin: 6px 0 10px;
+}
+
+.product-detail-price {
+  font-size: 1.3rem;
+  margin: 14px 0;
+}
+
+.product-detail-description {
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.product-detail-stock {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--rose);
+  margin-bottom: 20px;
+}
+
+.product-detail-stock.out { color: var(--text-light); }
+
+.product-detail-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.product-detail-qty {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1.5px solid var(--pink-light);
+  border-radius: 50px;
+  padding: 8px 18px;
+}
+
+.product-detail-qty button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: var(--off-white);
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.product-detail-actions .btn-primary {
+  border: none;
+  cursor: pointer;
+}
+
+.related-products { padding-top: 0; }
+
+@media (min-width: 1024px) {
+  .product-detail {
+    flex-direction: row;
+    gap: 56px;
+  }
+
+  .product-detail-gallery,
+  .product-detail-info {
+    flex: 1;
+  }
+}

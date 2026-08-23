@@ -1,10 +1,14 @@
 import '@/styles/pages/shop.css';
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { getProducts } from '@/lib/products';
 import ShopGrid from '@/components/ShopGrid';
 import Footer from '@/components/Footer';
 
-export const metadata: Metadata = { title: 'Shop' };
+export const metadata: Metadata = {
+  title: 'Shop',
+  description: 'Browse handcrafted rings, necklaces, earrings, bracelets & anklets from SaasyCharms.',
+};
 
 export default async function ShopPage() {
   const products = await getProducts();
@@ -17,7 +21,9 @@ export default async function ShopPage() {
       </div>
 
       <section className="section shop-page">
-        <ShopGrid products={products} />
+        <Suspense fallback={null}>
+          <ShopGrid products={products} />
+        </Suspense>
       </section>
 
       <Footer />
