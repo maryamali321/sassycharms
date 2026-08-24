@@ -2,11 +2,11 @@
   "name": "saasycharms",
   "version": "1.0.0",
   "private": true,
-  "description": "SaasyCharms – handcrafted jewellery storefront (Next.js + MongoDB + Cloudinary).",
+  "description": "SaasyCharms \u2013 handcrafted jewellery storefront (Next.js + MongoDB + Cloudinary).",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "node init && next dev",
+    "build": "node init && next build",
+    "start": "node init && next start",
     "lint": "eslint .",
     "seed": "node --env-file=.env.local scripts/seed.mjs"
   },

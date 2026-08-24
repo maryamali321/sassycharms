@@ -51,6 +51,7 @@
 /* ===== SHELL / SIDEBAR ===== */
 .admin-shell {
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
@@ -754,6 +755,8 @@
 }
 
 @media (min-width: 1024px) {
+  .admin-shell { flex-direction: row; }
+
   .admin-mobile-topbar { display: none; }
 
   .admin-sidebar {
