@@ -20,20 +20,16 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const isHome = pathname === '/';
-  const floating = isHome && !scrolled && !menuOpen;
-
   useEffect(() => {
     function onScroll() {
-      setScrolled(window.scrollY > 80);
+      setScrolled(window.scrollY > 40);
     }
-    onScroll();
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
-    <header className={`navbar${scrolled ? ' scrolled' : ''}${floating ? ' navbar-floating' : ''}`}>
+    <header className={`navbar${scrolled ? ' scrolled' : ''}`}>
       <div className="nav-logo">
         <BrandLogo />
       </div>

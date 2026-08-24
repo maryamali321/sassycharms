@@ -10,30 +10,13 @@
   justify-content: space-between;
   padding: 12px 6%;
   border-bottom: 1px solid var(--pink-light);
-  transition: background 0.35s, border-color 0.35s, box-shadow 0.3s, padding 0.3s;
+  transition: box-shadow 0.3s, padding 0.3s;
 }
 
 .navbar.scrolled {
   box-shadow: 0 4px 24px var(--shadow);
   padding: 8px 6%;
 }
-
-/* On the homepage, blends into the hero's deep jewel-tone top edge instead
-   of sitting in a plain light bar above it — reads as one continuous
-   surface until the visitor scrolls past the hero. */
-.navbar-floating {
-  background: var(--berry-deep);
-  border-bottom-color: transparent;
-  backdrop-filter: none;
-}
-
-.navbar-floating .nav-links a { color: rgba(251,244,236,0.82); }
-.navbar-floating .nav-links a:hover,
-.navbar-floating .nav-links a.active { color: var(--gold-pale); }
-.navbar-floating .nav-links a::after { background: var(--gold-pale); }
-.navbar-floating .nav-icons { color: var(--white); }
-.navbar-floating .nav-icons a:hover { color: var(--gold-pale); }
-.navbar-floating .hamburger span { background: var(--white); }
 
 .nav-logo {
   display: flex;

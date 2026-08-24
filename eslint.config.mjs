@@ -3,7 +3,7 @@ import nextConfig from 'eslint-config-next';
 const config = [
   ...nextConfig,
   {
-    ignores: ['legacy-static-site/**'],
+    ignores: ['legacy-static-site/**', 'legacy-nextjs-site/**'],
   },
 ];
 

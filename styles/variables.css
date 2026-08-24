@@ -3,18 +3,27 @@
    ========================================= */
 
 :root {
-  --pink:        #f4a5b8;
-  --pink-dark:   #e07a96;
-  --pink-light:  #fce4ec;
-  --pink-pale:   #fff0f5;
-  --rose:        #d4547a;
-  --white:       #ffffff;
-  --off-white:   #fdf6f8;
-  --text-dark:   #3a2030;
-  --text-mid:    #6b4c5e;
-  --text-light:  #a07890;
-  --gold:        #c9a86c;
-  --shadow:      rgba(212, 84, 122, 0.15);
+  --pink:        #e3a0ae;
+  --pink-dark:   #b8496b;
+  --pink-light:  #f3d9de;
+  --pink-pale:   #f8e9ea;
+  --rose:        #c13160;
+  --white:       #fefbf7;
+  --off-white:   #fbf4ec;
+  --text-dark:   #2a1420;
+  --text-mid:    #7a5c66;
+  --text-light:  #9c7b85;
+  --gold:        #c9a45c;
+  --shadow:      rgba(193, 49, 96, 0.16);
+
+  /* Deep jewel-tone accents — the "dark, classy" register used for the
+     hero, footer, and other high-drama bands (never a plain black/brown). */
+  --berry:       #7a1b3b;
+  --berry-soft:  #9c2a4d;
+  --berry-deep:  #3e0e1f;
+  --gold-pale:   #ebd9a8;
+  --gold-foil:   linear-gradient(115deg, #8c6a2e 0%, #e8d19b 28%, #f6ecc8 45%, #c9a45c 62%, #8c6a2e 100%);
+
   --font-serif:  var(--font-serif-google), 'Cormorant Garamond', serif;
   --font-sans:   var(--font-sans-google), 'Jost', sans-serif;
 

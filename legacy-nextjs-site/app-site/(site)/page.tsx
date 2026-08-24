@@ -3,52 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getFeaturedProducts } from '@/lib/products';
 import ProductCard from '@/components/ProductCard';
-import GrainTexture from '@/components/GrainTexture';
 import Newsletter from '@/components/Newsletter';
 import Footer from '@/components/Footer';
-
-const MOMENTS = [
-  {
-    title: 'For someone I love',
-    text: 'Gift-ready pieces, wrapped in blush paper, no request needed.',
-    href: '/shop',
-    icon: (
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3">
-        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'For everyday',
-    text: 'Light enough to forget you’re wearing them. Built to keep up.',
-    href: '/shop',
-    icon: (
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3">
-        <circle cx="12" cy="8" r="5" /><path d="M12 13v8M8 21h8" />
-      </svg>
-    ),
-  },
-  {
-    title: 'For an occasion',
-    text: 'Statement pieces made for the nights you’ll photograph.',
-    href: '/shop',
-    icon: (
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3">
-        <path d="M12 2 3 7l9 5 9-5-9-5Z" /><path d="M3 12l9 5 9-5M3 17l9 5 9-5" />
-      </svg>
-    ),
-  },
-  {
-    title: 'For myself, finally',
-    text: 'No occasion needed. This one’s just for you.',
-    href: '/shop',
-    icon: (
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3">
-        <rect x="3" y="8" width="18" height="12" rx="1" /><path d="M12 8V6a3 3 0 0 1 6 0M12 8V6a3 3 0 0 0-6 0" />
-      </svg>
-    ),
-  },
-];
 
 const CATEGORIES = [
   { name: 'Rings', value: 'rings', count: '12 Products', image: 'https://images.unsplash.com/photo-1567523977592-7959bc5df51e?w=400&q=80' },
@@ -81,17 +37,17 @@ const TESTIMONIALS = [
   {
     initial: 'A',
     name: 'Aiza Khan, Lahore',
-    text: '"Absolutely obsessed with my rose gold ring. The quality is amazing and the packaging was so pretty. Will definitely order again."',
+    text: '"Absolutely obsessed with my rose gold ring! The quality is amazing and the packaging was SO pretty. Will definitely order again 💕"',
   },
   {
     initial: 'S',
     name: 'Sara Malik, Karachi',
-    text: '"I gifted the pearl necklace to my sister and she loved it. Delivery was fast and everything was perfect. SaasyCharms is my go-to."',
+    text: '"I gifted the pearl necklace to my sister and she LOVED it. Delivery was fast and everything was perfect. SaasyCharms is my go-to!"',
   },
   {
     initial: 'M',
     name: 'Mahnoor, Islamabad',
-    text: '"The earrings are even more beautiful in person. Lightweight and dainty, exactly what I was looking for. Highly recommend."',
+    text: '"The earrings are even more beautiful in person! Lightweight and dainty, exactly what I was looking for. 10/10 recommend 🌸"',
   },
 ];
 
@@ -100,40 +56,35 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* ============ HERO — full-bleed jewel-tone, nav floats over it ============ */}
-      <section className="hero-v2">
-        <GrainTexture />
-        <div className="hero-v2-glow" />
-        <svg className="hero-v2-necklace" width="1440" height="840" viewBox="0 0 1440 840" aria-hidden="true">
-          <path d="M120 -20 C 260 220, 520 340, 760 300 S 1180 120, 1360 -30" fill="none" stroke="var(--gold-pale)" strokeWidth="1.4" opacity="0.55" />
-          <circle cx="760" cy="300" r="9" fill="none" stroke="var(--gold)" strokeWidth="1.6" />
-          <circle cx="760" cy="322" r="4" fill="var(--gold)" />
-          <path d="M756 331 L760 360 L764 331" fill="none" stroke="var(--gold)" strokeWidth="1.6" />
-          <circle cx="420" cy="150" r="3" fill="var(--gold-pale)" />
-          <circle cx="1040" cy="120" r="3" fill="var(--gold-pale)" />
-          <circle cx="1180" cy="220" r="4" fill="var(--gold-pale)" />
-        </svg>
-
-        <div className="hero-v2-content">
-          <p className="hero-v2-eyebrow">Handcrafted in small batches, made in Pakistan</p>
-          <h1 className="hero-v2-title">
-            Jewellery for the<br />things you<br /><em className="foil">don&apos;t say out loud.</em>
+      <section className="hero">
+        <div className="hero-bg" />
+        <div className="hero-content">
+          <p className="hero-tag"><span className="tag-icon">✦</span> New Collection 2026</p>
+          <h1>
+            Wear Your <em>Charm</em>,<br />
+            Own Your Story
           </h1>
-          <p className="hero-v2-sub">
-            Every SaasyCharms piece is shaped by hand. We keep runs small and deliberate, so what you wear stays yours.
+          <p className="hero-sub">
+            Delicate, handcrafted jewellery made for the modern woman who loves all things pink & pretty.
           </p>
-          <div className="hero-v2-btns">
-            <Link href="/shop" className="btn-foil">Shop the Edit</Link>
-            <Link href="/about" className="btn-ghost-dark">Our Story</Link>
+          <div className="hero-btns">
+            <Link href="/shop" className="btn-primary">Shop Now <i className="fas fa-arrow-right" /></Link>
+            <Link href="/about" className="btn-outline">Our Story</Link>
           </div>
-          <div className="hero-v2-stats">
-            {STATS.slice(0, 3).map((stat) => (
-              <div key={stat.label}>
-                <div className="hero-v2-stat-value">{stat.value}</div>
-                <div className="hero-v2-stat-label">{stat.label}</div>
-              </div>
-            ))}
+        </div>
+        <div className="hero-image">
+          <div className="hero-img-circle">
+            <Image
+              src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=500&q=80"
+              alt="Jewellery"
+              fill
+              sizes="400px"
+              style={{ objectFit: 'cover' }}
+              priority
+            />
           </div>
+          <div className="floating-badge badge1">✦ Handcrafted</div>
+          <div className="floating-badge badge2">💖 New Arrivals</div>
         </div>
       </section>
 
@@ -151,24 +102,6 @@ export default async function HomePage() {
           ))}
         </div>
       </div>
-
-      {/* ============ SHOP BY MOMENT ============ */}
-      <section className="section moments">
-        <div className="section-header">
-          <p className="section-tag"><span className="tag-icon">✦</span> What brings you here</p>
-          <h2>Every piece starts with a reason.</h2>
-        </div>
-        <div className="moments-grid">
-          {MOMENTS.map((moment) => (
-            <Link href={moment.href} className="moment-card" key={moment.title}>
-              <span className="moment-icon">{moment.icon}</span>
-              <h4>{moment.title}</h4>
-              <p>{moment.text}</p>
-              <span className="moment-explore">Explore <i className="fas fa-arrow-right" /></span>
-            </Link>
-          ))}
-        </div>
-      </section>
 
       <section className="trust-badges">
         <div className="trust-grid">
@@ -214,7 +147,7 @@ export default async function HomePage() {
       <section className="section featured-products">
         <div className="section-header">
           <p className="section-tag"><span className="tag-icon">✦</span> Handpicked For You</p>
-          <h2>The pieces going first</h2>
+          <h2>Bestsellers</h2>
           <p className="section-sub">The pieces our customers keep coming back for, crafted with premium finishes.</p>
         </div>
         <div className="products-grid">
@@ -238,32 +171,10 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ============ BRAND STORY — emotional, unattributed brand voice ============ */}
-      <section className="brand-story">
-        <GrainTexture />
-        <div className="brand-story-mark">
-          <svg width="180" height="220" viewBox="0 0 220 260" fill="none" stroke="var(--gold-pale)" strokeWidth="1.2">
-            <path d="M40 40c60-20 100 20 60 70-30 36 10 60 50 40" />
-            <circle cx="40" cy="40" r="7" />
-            <circle cx="150" cy="150" r="7" />
-          </svg>
-        </div>
-        <div className="brand-story-text">
-          <p className="section-tag section-tag-light">From the studio</p>
-          <p className="brand-story-quote">
-            SaasyCharms started with a simple frustration: jewellery we could actually afford never
-            felt like it was really ours. Every piece we make now is still checked by hand before it
-            leaves our studio — small runs, on purpose, so what you wear doesn&apos;t look like everyone
-            else&apos;s.
-          </p>
-          <p className="brand-story-sign">— The SaasyCharms studio</p>
-        </div>
-      </section>
-
       <section className="promo-banner">
         <div className="promo-content">
           <p className="section-tag section-tag-light"><span className="tag-icon">✦</span> Limited Time</p>
-          <h2>Get 10% Off Your First Order</h2>
+          <h2>Get 10% Off Your First Order 💖</h2>
           <p>Use code <strong>SAASY10</strong> at checkout</p>
           <Link href="/shop" className="btn-white">Shop Now</Link>
         </div>
@@ -272,7 +183,7 @@ export default async function HomePage() {
       <section className="section why-us">
         <div className="section-header">
           <p className="section-tag"><span className="tag-icon">✦</span> Why SaasyCharms</p>
-          <h2>Made With Love</h2>
+          <h2>Made With Love ♡</h2>
         </div>
         <div className="why-grid">
           {WHY_US.map((item) => (
@@ -288,7 +199,7 @@ export default async function HomePage() {
       <section className="section testimonials">
         <div className="section-header">
           <p className="section-tag"><span className="tag-icon">✦</span> Customer Love</p>
-          <h2>What Our Girls Say</h2>
+          <h2>What Our Girls Say ✨</h2>
         </div>
         <div className="testimonials-grid">
           {TESTIMONIALS.map((testimonial) => (

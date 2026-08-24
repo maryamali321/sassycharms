@@ -59,6 +59,7 @@ scripts/seed.mjs            → one-time script to load sample products into Mon
 styles/                     → design tokens, base styles, components, per-page styles
 styles/admin.css            → admin panel styling (separate from the storefront's branding)
 legacy-static-site/        → the original static HTML/CSS/JS site, kept as a backup/reference
+legacy-nextjs-site/         → the pre-redesign Next.js storefront (pages/components/styles), kept as a backup/reference
 ```
 
 ## Getting Started (local development)
@@ -147,6 +148,9 @@ Once the client buys a domain (e.g. from Namecheap/GoDaddy):
 - The `legacy-static-site/` folder is the original static HTML/CSS/JS version of the site, kept
   purely as a reference/backup. It is not used by the Next.js app and can be deleted once you're
   confident everything has migrated over correctly.
+- The `legacy-nextjs-site/` folder is a snapshot of the storefront's pages, components, and styles
+  from before the visual redesign — kept purely as a reference/backup in case you want to compare
+  or revert something. It is not used by the live app.
 - If MongoDB or Cloudinary aren't configured, the storefront still runs on bundled sample data —
   useful for local development before you've set anything up, and as a safety net if the database
   is briefly unreachable in production.

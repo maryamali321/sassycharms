@@ -19,21 +19,3 @@ img { max-width: 100%; display: block; }
 ul { list-style: none; }
 
 .visible { opacity: 1 !important; transform: translateY(0) !important; }
-
-/* Gold foil text — used sparingly on dark, high-drama bands (hero, footer accents) */
-.foil {
-  background: var(--gold-foil);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Fine grain texture overlay for deep jewel-tone panels, so they read as
-   rich fabric/velvet rather than a flat color fill. */
-.grain-texture {
-  position: absolute;
-  inset: 0;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
-  pointer-events: none;
-}

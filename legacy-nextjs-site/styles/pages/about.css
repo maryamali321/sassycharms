@@ -1,0 +1,98 @@
+/* =========================================
+   About Page – story, stats & values
+   ========================================= */
+
+.about-story {
+  padding: 48px 5%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+  background: var(--white);
+}
+
+.about-story-img {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  height: 280px;
+  box-shadow: 0 20px 60px var(--shadow);
+}
+
+.about-story-img img { width: 100%; height: 100%; object-fit: cover; }
+
+.about-story-text .section-tag { margin-bottom: 14px; }
+
+.about-story-text h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.about-story-text p {
+  color: var(--text-mid);
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.about-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 36px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat { text-align: center; }
+
+.stat h3 {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  color: var(--rose);
+  font-weight: 600;
+}
+
+.stat p { font-size: 13px; color: var(--text-mid); margin-top: 4px; }
+
+.about-values { padding: 56px 5%; background: var(--pink-pale); }
+
+.values-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+
+.value-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.value-card .value-icon { font-size: 2.5rem; margin-bottom: 18px; }
+
+.value-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.value-card p { font-size: 14px; color: var(--text-mid); line-height: 1.8; }
+
+@media (min-width: 768px) {
+  .about-story {
+    padding: 90px 6%;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+  }
+
+  .about-story-img { height: 460px; }
+
+  .about-values { padding: 80px 6%; }
+
+  .values-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+  .about-stats { justify-content: flex-start; flex-wrap: nowrap; }
+}

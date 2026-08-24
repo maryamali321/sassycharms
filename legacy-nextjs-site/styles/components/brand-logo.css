@@ -1,0 +1,45 @@
+/* ===== BRAND LOGO – full original artwork ===== */
+.brand-logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.brand-logo-img {
+  height: 60px;
+  width: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+  object-fit: cover;
+}
+
+.brand-logo-link:hover .brand-logo-img {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 8px 22px var(--shadow);
+}
+
+.brand-logo-compact .brand-logo-img {
+  height: 84px;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+@media (min-width: 480px) {
+  .brand-logo-img { height: 72px; }
+}
+
+@media (min-width: 768px) {
+  .brand-logo-img {
+    height: 104px;
+    border-radius: 14px;
+  }
+}
